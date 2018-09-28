@@ -116,6 +116,8 @@
     <Compile Include="Models\Comentarios.cs" />
     <Compile Include="Models\PadroesRequerimentos.cs" />
     <Compile Include="Models\Questionario.cs" />
+    <Compile Include="Repository\AtivosDevicesRepository.cs" />
+    <Compile Include="Repository\ClienteRepository.cs" />
     <Compile Include="Repository\QuestionarioRepository.cs" />
     <Compile Include="Models\QuestionarioRespostas.cs" />
     <Compile Include="Models\ServicosBackend.cs" />
