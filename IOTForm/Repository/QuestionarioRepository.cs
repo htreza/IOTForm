@@ -30,7 +30,7 @@ namespace IOTForm.Repository
                 using (SqlCommand cmd = new SqlCommand("UPDATE Questionario SET Questao=@questao, Status=@status VALUES (@questao)", conn))
                 {
                     cmd.Parameters.AddWithValue("@questao", questionario.Questao);
-                    cmd.Parameters.AddWithValue("@status", questionario.status);
+                    cmd.Parameters.AddWithValue("@status", questionario.Status);
                     return cmd.ExecuteNonQuery() > 0;
                 }
             }
