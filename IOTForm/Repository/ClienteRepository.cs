@@ -32,10 +32,11 @@ namespace IOTForm.Repository
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("UPDATE Cliente Set Nome=@nome WHERE Id=@id", conn))
+                using (SqlCommand cmd = new SqlCommand("UPDATE Cliente Set Nome=@nome, Status=@status WHERE Id=@id", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", cliente.Id);
                     cmd.Parameters.AddWithValue("@idcliente", cliente.Nome);
+                    cmd.Parameters.AddWithValue("@status", cliente.Status);
                     return cmd.ExecuteNonQuery() > 0;
                 }
             }

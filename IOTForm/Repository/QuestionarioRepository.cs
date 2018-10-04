@@ -10,6 +10,36 @@ namespace IOTForm.Repository
 {
     public class QuestionarioRepository
     {
+        public bool InsertQuestionario(Questionario questionario)
+        {
+            using (SqlConnection conn = new SqlConnection("COLE A CONNECTION STRING AQUI"))
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Questionario (Questao) VALUES (@questao)", conn))
+                {
+                    cmd.Parameters.AddWithValue("@questao", questionario.Questao);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+        public bool UpdateQuestionario(Questionario questionario)
+        {
+            using (SqlConnection conn = new SqlConnection("COLE A CONNECTION STRING AQUI"))
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand("UPDATE Questionario SET Questao=@questao, Status=@status VALUES (@questao)", conn))
+                {
+                    cmd.Parameters.AddWithValue("@questao", questionario.Questao);
+                    cmd.Parameters.AddWithValue("@status", questionario.status);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
+
         public bool InsertQuestionarioResposta(QuestionarioRespostas[] respostas)
         {
             using (SqlConnection conn = new SqlConnection("COLE A CONNECTION STRING AQUI"))

@@ -22,6 +22,13 @@ namespace IOTForm.Models
             get { return nome; }
             set { nome = value; }
         }
+        private int status;
+
+        public int Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
 
     }
 }
