@@ -1,4 +1,5 @@
-﻿using IOTForm.Models;
+﻿using IOTForm.DBTools;
+using IOTForm.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,10 +14,8 @@ namespace IOTForm.Repository
     {
         public bool InsertCliente(Cliente cliente)
         {
-            using (SqlConnection conn = new SqlConnection("COLE A CONNECTION STRING AQUI"))
+            using (SqlConnection conn = DBConnection.AbrirConn())
             {
-                conn.Open();
-
                 using (SqlCommand cmd = new SqlCommand("INSERT INTO Cliente (Id, Nome) VALUES (@id, @nome)", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", cliente.Id);
@@ -28,10 +27,8 @@ namespace IOTForm.Repository
 
         public bool UpdateCliente(Cliente cliente)
         {
-            using (SqlConnection conn = new SqlConnection("COLE A CONNECTION STRING AQUI"))
+            using (SqlConnection conn = DBConnection.AbrirConn())
             {
-                conn.Open();
-
                 using (SqlCommand cmd = new SqlCommand("UPDATE Cliente Set Nome=@nome, Status=@status WHERE Id=@id", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", cliente.Id);

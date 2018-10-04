@@ -1,4 +1,5 @@
-﻿using IOTForm.Models;
+﻿using IOTForm.DBTools;
+using IOTForm.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,10 +13,8 @@ namespace IOTForm.Repository
     {
         public bool InsertQuestionario(Questionario questionario)
         {
-            using (SqlConnection conn = new SqlConnection("COLE A CONNECTION STRING AQUI"))
+            using (SqlConnection conn = DBConnection.AbrirConn())
             {
-                conn.Open();
-
                 using (SqlCommand cmd = new SqlCommand("INSERT INTO Questionario (Questao) VALUES (@questao)", conn))
                 {
                     cmd.Parameters.AddWithValue("@questao", questionario.Questao);
@@ -26,10 +25,8 @@ namespace IOTForm.Repository
 
         public bool UpdateQuestionario(Questionario questionario)
         {
-            using (SqlConnection conn = new SqlConnection("COLE A CONNECTION STRING AQUI"))
+            using (SqlConnection conn = DBConnection.AbrirConn())
             {
-                conn.Open();
-
                 using (SqlCommand cmd = new SqlCommand("UPDATE Questionario SET Questao=@questao, Status=@status VALUES (@questao)", conn))
                 {
                     cmd.Parameters.AddWithValue("@questao", questionario.Questao);
@@ -42,10 +39,8 @@ namespace IOTForm.Repository
 
         public bool InsertQuestionarioResposta(QuestionarioRespostas[] respostas)
         {
-            using (SqlConnection conn = new SqlConnection("COLE A CONNECTION STRING AQUI"))
+            using (SqlConnection conn = DBConnection.AbrirConn())
             {
-                conn.Open();
-                
                 using (SqlCommand cmd = new SqlCommand("INSERT INTO QuestionarioRespostas (IdCliente, IdQuestao, Resposta, RespostaTexto) VALUES (@id, @idcliente, @idquestao, @resposta, @respostatexto)", conn))
                 {
 
@@ -65,10 +60,8 @@ namespace IOTForm.Repository
 
         public bool UpdateQuestionarioResposta(QuestionarioRespostas[] respostas)
         {
-            using (SqlConnection conn = new SqlConnection("COLE A CONNECTION STRING AQUI"))
+            using (SqlConnection conn = DBConnection.AbrirConn())
             {
-                conn.Open();
-
                 using (SqlCommand cmd = new SqlCommand(@"UPDATE QuestionarioRespostas SET IdCliente=@idcliente, IdQuestao=@idquestao,
                                                         Resposta=@resposta, RespostaTexto=@respostatexto WHERE Id=@id", conn))
                 {

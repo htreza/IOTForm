@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using IOTForm.DBTools;
 
 namespace IOTForm.Repository
 {
@@ -13,10 +14,8 @@ namespace IOTForm.Repository
 
         public bool InsertAmbienteProjeto(AmbienteProjeto ambiente)
         {
-            using (SqlConnection conn = new SqlConnection("COLE A CONNECTION STRING AQUI"))
+            using (SqlConnection conn = DBConnection.AbrirConn())
             {
-                conn.Open();
-
                 using (SqlCommand cmd = new SqlCommand(@"INSERT INTO AmbienteProjeto (IdCliente, AmbienteTempo, AmbienteBudget, AmbienteFuncionais, AmbienteTecnicas)"+
                                                             "VALUES (@idcliente, @ambientetempo, @ambientebudget, @ambientefuncionais, @ambientetecnicas)", conn))
                 {
@@ -32,10 +31,8 @@ namespace IOTForm.Repository
 
         public bool UpdateAtivosDevices(AmbienteProjeto ambiente)
         {
-            using (SqlConnection conn = new SqlConnection("COLE A CONNECTION STRING AQUI"))
+            using (SqlConnection conn = DBConnection.AbrirConn())
             {
-                conn.Open();
-
                 using (SqlCommand cmd = new SqlCommand(@"UPDATE AmbienteProjeto SET IdCliente=@idcliente, AmbienteTempo=@ambientetempo, AmbienteBudget=@ambientebudget,"+
                                                         "AmbienteFuncionais=@ambientefuncionais, AmbienteTecnicas=@ambientetecnicas WHERE IdCliente=@idcliente", conn))
                 {

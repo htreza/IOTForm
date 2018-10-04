@@ -1,4 +1,5 @@
-﻿using IOTForm.Models;
+﻿using IOTForm.DBTools;
+using IOTForm.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,10 +14,8 @@ namespace IOTForm.Repository
 
         public bool InsertAtivosDevices(AtivosDevices ativos)
         {
-            using (SqlConnection conn = new SqlConnection("COLE A CONNECTION STRING AQUI"))
+            using (SqlConnection conn = DBConnection.AbrirConn())
             {
-                conn.Open();
-
                 using (SqlCommand cmd = new SqlCommand(@"INSERT INTO AtivosDevices (IdCliente, GeralNumeroAtivos,GeralValorAtivo,GeralValorEconomico," +
                                                             "GeralComplexidadeAtivo,GeralHeteroAtivo,PoderLogicaNegocio,PoderProcessamento,PoderRequerimentos" +
                                                             "PoderGestaoLocal,OutrosFonteEnergia,OutrosAmbiente,GestaoVidaUtil,GestaoRestricoesHardware," +
@@ -47,10 +46,8 @@ namespace IOTForm.Repository
 
         public bool UpdateAtivosDevices(AtivosDevices ativos)
         {
-            using (SqlConnection conn = new SqlConnection("COLE A CONNECTION STRING AQUI"))
+            using (SqlConnection conn = DBConnection.AbrirConn())
             {
-                conn.Open();
-
                 using (SqlCommand cmd = new SqlCommand(@"UPDATE AtivosDevices SET GeralNumeroAtivos=@geralnumeroativos, GeralValorAtivo=@geralvalorativos, "+
                                                         "GeralValorEconomico=@geralvaloreconomico, GeralComplexidadeAtivo=@geralcomplexidadeativo, GeralHeteroAtivo=@geralheteroativo, " +
                                                         "PoderLogicaNegocio=@poderlogicanegocio, PoderProcessamento=@poderprocessamento, PoderRequerimentos=@poderrequerimentos, " +

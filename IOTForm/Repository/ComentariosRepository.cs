@@ -1,4 +1,5 @@
-﻿using IOTForm.Models;
+﻿using IOTForm.DBTools;
+using IOTForm.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,10 +13,8 @@ namespace IOTForm.Repository
     {
         public bool InsertComentario(Comentarios comentario)
         {
-            using (SqlConnection conn = new SqlConnection("COLE A CONNECTION STRING AQUI"))
+            using (SqlConnection conn = DBConnection.AbrirConn())
             {
-                conn.Open();
-
                 using (SqlCommand cmd = new SqlCommand(@"INSERT INTO Comentarios (IdCampoTabela, NomeTabela, NomeColuna, Comentario)" +
                                                         "VALUES (@idcampotabela, @nometabela, @nomecoluna, @comentario)", conn))
                 {
@@ -30,10 +29,8 @@ namespace IOTForm.Repository
 
         public bool UpdateComentario(Comentarios comentario)
         {
-            using (SqlConnection conn = new SqlConnection("COLE A CONNECTION STRING AQUI"))
+            using (SqlConnection conn = DBConnection.AbrirConn())
             {
-                conn.Open();
-
                 using (SqlCommand cmd = new SqlCommand(@"UPDATE Comentarios SET NomeTabela= @nometabela, NomeColuna=@nomecoluna,"+
                                                         "Comentario=@comentario WHERE IdCampoTabela=@idcampotabela", conn))
                 {
