@@ -1,11 +1,11 @@
-﻿using IOTForm.DBTools;
-using IOTForm.Models;
+﻿using IOTForm.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using IOTForm.DBTools;
 
 namespace IOTForm.Repository
 {
@@ -24,7 +24,7 @@ namespace IOTForm.Repository
                 }
             }
         }
-
+       
         public bool UpdateCliente(Cliente cliente)
         {
             using (SqlConnection conn = DBConnection.AbrirConn())

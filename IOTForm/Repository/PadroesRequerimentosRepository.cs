@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using IOTForm.DBTools;
 
 
 namespace IOTForm.Repository
@@ -13,7 +14,7 @@ namespace IOTForm.Repository
     {
         public bool InsertPadroesRequerimentos(PadroesRequerimentos padroes)
         {
-            using (SqlConnection conn = new SqlConnection("COLE A CONNECTION STRING AQUI"))
+            using (SqlConnection conn = DBConnection.AbrirConn())
             {
                 conn.Open();
 
@@ -35,7 +36,7 @@ namespace IOTForm.Repository
 
         public bool UpdatePadroesRequerimentos(PadroesRequerimentos padroes)
         {
-            using (SqlConnection conn = new SqlConnection("COLE A CONNECTION STRING AQUI"))
+            using (SqlConnection conn = DBConnection.AbrirConn()
             {
                 conn.Open();
 

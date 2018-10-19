@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using IOTForm.DBTools;
 
 
 namespace IOTForm.Repository
@@ -13,7 +14,7 @@ namespace IOTForm.Repository
     {
         public bool InsertServicosBackend(ServicosBackend servico)
         {
-            using (SqlConnection conn = new SqlConnection("COLE A CONNECTION STRING AQUI"))
+            using (SqlConnection conn = DBConnection.AbrirConn())
             {
                 conn.Open();
 
@@ -38,7 +39,7 @@ namespace IOTForm.Repository
 
         public bool UpdateServicosBackend(ServicosBackend servico)
         {
-            using (SqlConnection conn = new SqlConnection("COLE A CONNECTION STRING AQUI"))
+            using (SqlConnection conn = DBConnection.AbrirConn())
             {
                 conn.Open();
 
