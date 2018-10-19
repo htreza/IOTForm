@@ -28,13 +28,13 @@ namespace IOTForm.Repository
                 }
             }
         }
-
-        public bool UpdateAtivosDevices(AmbienteProjeto ambiente)
+       
+        public bool UpdateAmbienteProjeto(AmbienteProjeto ambiente)
         {
             using (SqlConnection conn = DBConnection.AbrirConn())
             {
-                using (SqlCommand cmd = new SqlCommand(@"UPDATE AmbienteProjeto SET IdCliente=@idcliente, AmbienteTempo=@ambientetempo, AmbienteBudget=@ambientebudget,"+
-                                                        "AmbienteFuncionais=@ambientefuncionais, AmbienteTecnicas=@ambientetecnicas WHERE IdCliente=@idcliente", conn))
+                using (SqlCommand cmd = new SqlCommand(@"UPDATE AmbienteProjeto SET AmbienteTempo=@ambientetempo, AmbienteBudget=@ambientebudget,"+
+                                                            "AmbienteFuncionais=@ambientefuncionais, AmbienteTecnicas=@ambientetecnicas WHERE IdCliente=@idcliente", conn))
                 {
                     cmd.Parameters.AddWithValue("@idcliente", ambiente.IdCliente);
                     cmd.Parameters.AddWithValue("@ambientetempo", ambiente.IdCliente);

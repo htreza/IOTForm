@@ -107,6 +107,12 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\FormularioAssessmentController.cs" />
+    <Compile Include="Controllers\FormularioInicialController.cs" />
+>>>>>>> b59662c6d0576af685ce2cf33f136d1b495c638e
     <Compile Include="DBTools\DBConnection.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -139,7 +145,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

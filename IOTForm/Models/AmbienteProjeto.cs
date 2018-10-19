@@ -8,14 +8,13 @@ namespace IOTForm.Models
     public class AmbienteProjeto
     {
         private int id;
-
         public int Id
         {
             get { return id; }
             set { id = value; }
         }
-        private int idCliente;
 
+        private int idCliente;
         public int IdCliente
         {
             get { return idCliente; }
@@ -23,34 +22,59 @@ namespace IOTForm.Models
         }
 
         private int ambienteTempo;
-
         public int AmbienteTempo
         {
             get { return ambienteTempo; }
             set { ambienteTempo = value; }
         }
-        private int ambienteBudget;
 
+        private string ambienteTempoC;
+        public string AmbienteTempoC
+        {
+            get { return ambienteTempoC; }
+            set { ambienteTempoC = value; }
+        }
+
+        private int ambienteBudget;
         public int AmbienteBudget
         {
             get { return ambienteBudget; }
             set { ambienteBudget = value; }
         }
-        private int ambienteFuncionais;
 
+        private string ambienteBudgetC;
+        public string AmbienteBudgetC
+        {
+            get { return ambienteBudgetC; }
+            set { ambienteBudgetC = value; }
+        }
+
+        private int ambienteFuncionais;
         public int AmbienteFuncionais
         {
             get { return ambienteFuncionais; }
             set { ambienteFuncionais = value; }
         }
 
-        private int ambienteTecnicas;
+        private string ambienteFuncionaisC;
+        public string AmbienteFuncionaisC
+        {
+            get { return ambienteFuncionaisC; }
+            set { ambienteFuncionaisC = value; }
+        }
 
+        private int ambienteTecnicas;
         public int AmbienteTecnicas
         {
             get { return ambienteTecnicas; }
             set { ambienteTecnicas = value; }
         }
-        
+
+        private string ambienteTecnicasC;
+        public string AmbienteTecnicasC
+        {
+            get { return ambienteTecnicasC; }
+            set { ambienteTecnicasC = value; }
+        }
     }
 }

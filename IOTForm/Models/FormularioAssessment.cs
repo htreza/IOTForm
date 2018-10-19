@@ -7,12 +7,17 @@ namespace IOTForm.Models
 {
     public class FormularioAssessment
     {
-        private readonly AmbienteProjeto AmbienteProjeto;
-        private readonly AtivosDevices AtivosDevice;
-        private readonly Comentarios Comentarios;
-        private readonly PadroesRequerimentos PadroesRequerimentos;
-        private readonly Questionario Questionario;
-        private readonly QuestionarioRespostas QuestionarioRespostas;
-        private readonly ServicosBackend ServicosBackend;
+        public readonly AmbienteProjeto AmbienteProjeto;
+        public readonly AtivosDevices AtivosDevices;
+        public readonly PadroesRequerimentos PadroesRequerimentos;
+        public readonly ServicosBackend ServicosBackend;
+
+        public FormularioAssessment(AmbienteProjeto AmbienteProjeto, AtivosDevices AtivosDevices, PadroesRequerimentos PadroesRequerimentos, ServicosBackend ServicosBackend)
+        {
+            this.AmbienteProjeto = AmbienteProjeto;
+            this.AtivosDevices = AtivosDevices;
+            this.PadroesRequerimentos = PadroesRequerimentos;
+            this.ServicosBackend = ServicosBackend;
+        }
     }
 }

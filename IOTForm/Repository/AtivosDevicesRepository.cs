@@ -1,11 +1,11 @@
-﻿using IOTForm.DBTools;
-using IOTForm.Models;
+﻿using IOTForm.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using IOTForm.DBTools;
 
 namespace IOTForm.Repository
 {
@@ -49,11 +49,11 @@ namespace IOTForm.Repository
             using (SqlConnection conn = DBConnection.AbrirConn())
             {
                 using (SqlCommand cmd = new SqlCommand(@"UPDATE AtivosDevices SET GeralNumeroAtivos=@geralnumeroativos, GeralValorAtivo=@geralvalorativos, "+
-                                                        "GeralValorEconomico=@geralvaloreconomico, GeralComplexidadeAtivo=@geralcomplexidadeativo, GeralHeteroAtivo=@geralheteroativo, " +
-                                                        "PoderLogicaNegocio=@poderlogicanegocio, PoderProcessamento=@poderprocessamento, PoderRequerimentos=@poderrequerimentos, " +
-                                                        "PoderGestaoLocal=@podergestaolocal, OutrosFonteEnergia=@outrosfonteenergia, OutrosAmbiente=@outrosambiente, " +
-                                                        "GestaoVidaUtil=@gestaovidautil, GestaoRestricoesHardware=@gestaorestricoeshardware, GestaoRestricoesSoftware=@gestaorestricoessoftware " +
-                                                        "WHERE IdCliente=@idcliente", conn))
+                                                            "GeralValorEconomico=@geralvaloreconomico, GeralComplexidadeAtivo=@geralcomplexidadeativo, GeralHeteroAtivo=@geralheteroativo, " +
+                                                            "PoderLogicaNegocio=@poderlogicanegocio, PoderProcessamento=@poderprocessamento, PoderRequerimentos=@poderrequerimentos, " +
+                                                            "PoderGestaoLocal=@podergestaolocal, OutrosFonteEnergia=@outrosfonteenergia, OutrosAmbiente=@outrosambiente, " +
+                                                            "GestaoVidaUtil=@gestaovidautil, GestaoRestricoesHardware=@gestaorestricoeshardware, GestaoRestricoesSoftware=@gestaorestricoessoftware " +
+                                                            "WHERE IdCliente=@idcliente", conn))
                 {
                     cmd.Parameters.AddWithValue("@idcliente", ativos.IdCliente);
                     cmd.Parameters.AddWithValue("@geralnumerosativos", ativos.IdCliente);
