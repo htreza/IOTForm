@@ -1,4 +1,5 @@
-IOTForm/bin/
+bin/
 .vs/
-IOTForm/obj/
+obj/
 IOTForm/Web.config
+IOTForm.csproj.user
