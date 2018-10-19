@@ -107,6 +107,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="DBTools\DBConnection.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -114,18 +115,17 @@
     <Compile Include="Models\AtivosDevices.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Comentarios.cs" />
+    <Compile Include="Models\FormularioAssessment.cs" />
     <Compile Include="Models\PadroesRequerimentos.cs" />
     <Compile Include="Models\Questionario.cs" />
     <Compile Include="Repository\AmbienteProjetoRepository.cs" />
     <Compile Include="Repository\AtivosDevicesRepository.cs" />
     <Compile Include="Repository\ClienteRepository.cs" />
     <Compile Include="Repository\ComentariosRepository.cs" />
-    <Compile Include="Repository\PadroesRequerimentosRepository.cs" />
     <Compile Include="Repository\QuestionarioRepository.cs" />
     <Compile Include="Models\QuestionarioRespostas.cs" />
     <Compile Include="Models\ServicosBackend.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\ServicosBackendRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
