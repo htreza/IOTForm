@@ -71,7 +71,7 @@ CREATE TABLE ComunicacaoConectividade(
 	IdCliente INTEGER NOT NULL,
 
 	LocalTecnologia TINYINT NOT NULL,
-	LocalTecnologiaC NTEXTNULL,
+	LocalTecnologiaC NTEXT NULL,
 	LocalLarguraBanda TINYINT NOT NULL,
 	LocalLarguraBandaC NTEXT NULL,
 	LocalMaximaLatencia TINYINT NOT NULL,
