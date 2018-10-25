@@ -11,7 +11,6 @@ namespace IOTForm.Repository
 {
     public class AtivosDevicesRepository
     {
-
         public bool InsertAtivosDevices(AtivosDevices ativos)
         {
             using (SqlConnection conn = DBConnection.AbrirConn())

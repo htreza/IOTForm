@@ -9,7 +9,6 @@ using IOTForm.DBTools;
 
 namespace IOTForm.Repository
 {
-    //private string ConnString = System.Configuration.ConnectionStringSettings;
     public class ClienteRepository
     {
         public bool InsertCliente(Cliente cliente)

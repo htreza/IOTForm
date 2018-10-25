@@ -11,7 +11,6 @@ namespace IOTForm.Repository
 {
     public class AmbienteProjetoRepository
     {
-
         public bool InsertAmbienteProjeto(AmbienteProjeto ambiente)
         {
             using (SqlConnection conn = DBConnection.AbrirConn())

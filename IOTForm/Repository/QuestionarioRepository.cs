@@ -1,5 +1,4 @@
-﻿using IOTForm.DBTools;
-using IOTForm.Models;
+﻿using IOTForm.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
